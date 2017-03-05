@@ -1,3 +1,6 @@
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
+
 # nodejs-dojo-kake-4-layer-node-app
 
 We’re going to design a 4 layers architecture by collaborating.
