@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require('express')
 const request = require('request')
 const _ = require('lodash')
@@ -5,15 +7,15 @@ const _ = require('lodash')
 const app = express()
 
 const backendServers = [
-  'http://localhost:9000',
-  'http://localhost:9001'
+  'http://localhost:9000/data',
+  'http://localhost:9001/data'
 ]
 
-app.get('/proxy', function (req, res) {
+app.get('/proxy', (req, res) => {
 
   // grab one random server
-  let server = _.sample(backendServers)
-  console.log(`I'm going to request to server: ${server}`)
+  const server = _.sample(backendServers)
+  console.log(`I'm going to request to server: ${server}`)  //NOSONAR
 
   request(server, (error, response, body) => {
 
@@ -27,8 +29,8 @@ app.get('/proxy', function (req, res) {
   })
 })
 
-app.listen(7000, function () {
-  console.log('Load Balancer working on localhost:7000!')
+app.listen(7000, () => {
+  console.log('Load Balancer working on localhost:7000!') //NOSONAR
 })
 
 

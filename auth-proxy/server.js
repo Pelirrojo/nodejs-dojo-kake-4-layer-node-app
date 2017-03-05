@@ -1,3 +1,5 @@
+'use strict'
+
 const cors = require('cors')
 const express = require('express')
 const request = require('request')
@@ -10,6 +12,13 @@ app.get('/token', (req, res) => {
   res.status(200).send({token: 12345})
 
 })
+
+/**
+ * Note that, this two sentences are equivalent:
+ *
+ * app.get('/data', function (req, res) { ... })
+ * app.get('/data', (req, res) => { ... })
+ */
 
 app.get('/data', (req, res) => {
 
@@ -28,5 +37,5 @@ app.get('/data', (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log('Auth server working on localhost:3000!')
+  console.log('Auth server working on localhost:3000!') //NOSONAR
 })
