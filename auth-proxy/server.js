@@ -1,6 +1,9 @@
+const cors = require('cors')
 const express = require('express')
 const request = require('request')
 const app = express()
+
+app.use(cors())
 
 app.get('/token', (req, res) => {
 
